@@ -4,5 +4,7 @@ name = 'amimageresizer',
 version = '0.1',
 packages = find_packages(),
 author = 'Ammad Khalid',
-install_requires = ['python-resize-image', 'requests']
+author_email = 'ammadkhalid12@gmail.com',
+install_requires = ['python-resize-image', 'requests'],
+url = 'https://github.com/Ammadkhalid/image-resizer'
 )
