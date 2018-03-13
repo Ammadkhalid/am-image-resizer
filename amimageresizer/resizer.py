@@ -6,9 +6,13 @@ import requests
 
 class ImgResizer(object):
 
-    def resizeFromUrl(imageUrl, width, height):
+    def resizeFromUrl(imageUrl, width, height, proxies = None):
         # bytes stream
-        req = requests.get(imageUrl, stream=True)
+        # use proxies if give
+        if proxies:
+            req = requests.get(imageUrl, stream=True, proxies=proxies)
+        else:
+            req = requests.get(imageUrl, stream=True)
 
         if not req.ok:
             raise ResponseIsNotOK('request is not OK, status code: {}'.format(req.status_code))
